@@ -1,3 +1,6 @@
+int Max3(int A, int B, int C) {
+    return A > B ? A > C ? A : C : B > C ? B : C;
+}
 int DivideAndConquer(int A[], int left, int right) {
 	if (left == right) {
 		if (A[left] > 0) return A[left];
