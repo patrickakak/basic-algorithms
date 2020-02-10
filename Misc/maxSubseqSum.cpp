@@ -1,15 +1,3 @@
-int MaxSubseqSum3(int A[], int N) {
-	return DivideAndConquer(A, 0, N - 1);
-}
-int MaxSubseqSum4(int A[], int N) {
-	int MaxSum = 0, ThisSum = 0;
-	for (int i = 0; i < N; i++) {
-		ThisSum += A[i];
-		if (ThisSum > MaxSum) MaxSum = ThisSum;
-		if (ThisSum < 0) ThisSum = 0;
-	}
-	return MaxSum;
-}
 int DivideAndConquer(int A[], int left, int right) {
 	if (left == right) {
 		if (A[left] > 0) return A[left];
@@ -29,4 +17,16 @@ int DivideAndConquer(int A[], int left, int right) {
 		if (RightBorderSum > MaxRightBorderSum) MaxRightBorderSum = RightBorderSum;
 	}
 	return Max3(MaxLeftSum, MaxRightSum, MaxLeftBorderSum + MaxRightBorderSum);
+}
+int MaxSubseqSum3(int A[], int N) {
+	return DivideAndConquer(A, 0, N - 1);
+}
+int MaxSubseqSum4(int A[], int N) {
+	int MaxSum = 0, ThisSum = 0;
+	for (int i = 0; i < N; i++) {
+		ThisSum += A[i];
+		if (ThisSum > MaxSum) MaxSum = ThisSum;
+		if (ThisSum < 0) ThisSum = 0;
+	}
+	return MaxSum;
 }
