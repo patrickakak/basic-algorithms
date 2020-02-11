@@ -20,13 +20,9 @@ void BFS(Vertex V) {
  * Graph adjacency matrix implementation (directed graph): 
  * T = O(N^2): Same as DFS_m
  */
-
-/* IsEdge() to check whether edge<V, W> is one of the edges of Graph or not. 
- * In this case, a inexistent edge is marked as INFINITY when initialized: */
 bool IsEdge(Mgraph Graph, Vertex V, Vertex W) {
 	return Graph->G[V][W] < INFINITY ? true : false;
 }
-/* visited[] is a global array, initialized to be false */
 void BFS_m(MGraph Graph, Vertex S, void (*Visit)(Vertex)) {
 	Queue Q = CreatQueue(MaxSize);
 	Visit(S);
