@@ -1,5 +1,5 @@
 /**
- * Static implementation of normal tree
+ * Static implementation of a tree
  */
 #define maxn 100010
 struct Node {
@@ -14,7 +14,7 @@ int newNode(int v) {
 }
 void PreOrder(int root) {
 	printf("%d ", node[root].data);
-	for (int i = 0; i < (int)node[root].child.size(); i++)
+	for (int i = 0; i < node[root].child.size(); i++)
 		PreOrder(node[root].child[i]);
 }
 void LevelOrder(int root) {
@@ -25,7 +25,7 @@ void LevelOrder(int root) {
 		int front = Q.front();
 		printf("%d ", node[front].data);
 		Q.pop();
-		for (int i = 0; i < (int)node[front].child.size(); i++) {
+		for (int i = 0; i < node[front].child.size(); i++) {
 			int child = node[front].child[i];
 			node[child].level = node[front].level + 1;
 			Q.push(child);
