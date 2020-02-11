@@ -7,15 +7,12 @@
 #include <vector>
 #include <algorithm>
 using namespace std;
-
 const int INF = 0x3fffffff;
 #define MAXV 1000
 int d[MAXV];
 bool visit[MAXV];
 vector<int> pre[MAXV];
-
-void Dijkstra(int s)
-{
+void Dijkstra(int s) {
 	fill(d, d + MAXV, INF);
 	d[s] = 0;
 	for (int i = 0; i < n; i++) {
@@ -50,13 +47,12 @@ void Dijkstra(int s)
  *        \ /                    |  |        pre[1] = {1}     (Starting vertex)
  *         V7                   V1  V1
  ***************************************************************************/
-int start, end;				// starting/ending vertex
-int optValue;				// second measurement
-vector<int> path, tmpPath;	// elements in tmpPath is in reversed order
-void DFS(int v)
-{
+int start, end;             // starting/ending vertex
+int optValue;               // second measurement
+vector<int> path, tmpPath;  // elements in tmpPath is in reversed order
+void DFS(int v) {
+	tmpPath.push_back(v);
 	if (v == start) {
-		tmpPath.push_back(v);
 		int value;
 		if (value better than optValue) {
 			optValue = value;
@@ -65,9 +61,6 @@ void DFS(int v)
 		tmpPath.pop_back();
 		return;
 	}
-	tmpPath.push_back(v);
-	for (int i = 0; i < pre[v].size(); i++)
-		DFS(pre[v][i]);
+	for (int i = 0; i < pre[v].size(); i++) DFS(pre[v][i]);
 	tmpPath.pop_back();
 }
-
