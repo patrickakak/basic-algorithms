@@ -1,27 +1,21 @@
 typedef int Position;
 struct SNode {
-	ElementType *Data; 	/* Array to store elements */
-	Position Top; 	/* Top pointer of stack */
-	int MaxSize; 	/* Max capacity of stack */
+	ElementType *Data;
+	Position Top;
+	int MaxSize;
 };
 typedef struct SNode *Stack;
-
-Stack CreateStack(int MaxSize)
-{
+Stack CreateStack(int MaxSize) {
 	Stack S = (Stack) malloc(sizeof(struct SNode));
 	S->Data = (ElementType *) malloc(MaxSize * sizeof(ElementType));
 	S->Top = -1;
 	S->MaxSize = MaxSize;
 	return S;
 }
-
-bool IsFull(Stack S)
-{
+bool IsFull(Stack S) {
 	return (S->Top == S->MaxSize-1);
 }
-
-bool Push(Stack S, ElementType X)
-{
+bool Push(Stack S, ElementType X) {
 	if (IsFull(S)) {
 		printf("Full stack");
 		return false;
@@ -30,18 +24,13 @@ bool Push(Stack S, ElementType X)
 		return true;
 	}
 }
-
-bool IsEmpty(Stack S)
-{
+bool IsEmpty(Stack S) {
 	return (S->Top == -1);
 }
-
-ElementType Pop(Stack S)
-{
+ElementType Pop(Stack S) {
 	if (IsEmpty(S)) {
 		printf("Empty stack");
-		return ERROR; 	/* To indicate an error */
-	} else
-		return (S->Data[(S->Top)--]);
+		return ERROR;
+	} else return (S->Data[(S->Top)--]);
 }
 
