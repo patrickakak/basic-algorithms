@@ -18,10 +18,6 @@ int GetHeight(BinTree BT) {
 		return (MaxH + 1);
 	} else return 0;
 }
-
-/*************************************************************************/
-/* Implementation of single left rotation and double right left rotation */
-/*************************************************************************/
 AVLTree LL(AVLTree A) {
 	AVLTree B = A->Left;
 	A->Left = B->Right;
