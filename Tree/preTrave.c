@@ -5,31 +5,22 @@ typedef struct TreeNode *BinTree;
 typedef BinTree Position;
 struct TreeNode {
 	ElementType Data;
-	BinTree Left;
-	BinTree Right;
-	int Nv; 	/* Number of visitation */
+	BinTree Left, Right;
+	int Nv;
 };
-
-/* Binary tree preorder traversal (recursive) */
-void PreOrderTraversal(BinTree BT)
-{
-	/* If BT is empty, do nothing */
+void PreOrderTraversal(BinTree BT) {
 	if (BT) {
-		printf("%d", BT->Data); 	/* Visit the node */
+		printf("%d", BT->Data);
 		PreOrderTraversal(BT->Left);
 		PreOrderTraversal(BT->Right);
 	}
 }
-
-/* Non-recursive (i.e. iterative) preorder traversals */
-void PreOrderTraversal(BinTree BT)
-{
+void PreOrderTraversal(BinTree BT) {
 	BinTree T = BT;
 	Stack S = CreatStack(MaxSize);
-
 	while (T || !IsEmpty(S)) {
 		while (T) {
-			Push(S, T); 	/* First time to visit it */
+			Push(S, T);
 			printf("%5d", T->Data);
 			T = T->Left;
 		}
@@ -39,4 +30,3 @@ void PreOrderTraversal(BinTree BT)
 		}
 	}
 }
-
