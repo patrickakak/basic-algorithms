@@ -27,9 +27,9 @@ void PostOrderTraversal(BinTree BT) {
 			T = T->Left;
 		}
 		if (!IsEmpty(S)) {
-			T = Pop(S); T->Nv++;
-			if (!T->Right)
-				T->Nv++;
+			T = Pop(S);
+			T->Nv++;
+			if (!T->Right) T->Nv++;
 			if (T->Nv == 3) {
 				printf("%5d", T->Data);
 				T = NULL;
