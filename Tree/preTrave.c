@@ -8,6 +8,7 @@ struct TreeNode {
 	BinTree Left, Right;
 	int Nv;
 };
+// recursive
 void PreOrderTraversal(BinTree BT) {
 	if (BT) {
 		printf("%d", BT->Data);
@@ -15,6 +16,7 @@ void PreOrderTraversal(BinTree BT) {
 		PreOrderTraversal(BT->Right);
 	}
 }
+// iterative
 void PreOrderTraversal(BinTree BT) {
 	BinTree T = BT;
 	Stack S = CreatStack(MaxSize);
