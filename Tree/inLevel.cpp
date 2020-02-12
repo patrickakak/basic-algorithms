@@ -17,13 +17,9 @@ BinTree CreatBT(int *level, int *in, int N) {
 	int Lin[Max_L], Rin[Max_L], Llev[Max_L], Rlev[Max_L];
 	for (int cnt=0, i=0; i < pos; i++, cnt++) Lin[cnt] = in[i];
 	for (int cnt=0, i=pos+1; i < N; i++, cnt++) Rin[cnt] = in[i];
-	/* Do not use two pointers since in level order, elements might
-	 * interwined with each other.
-	  */
 	for (int cnt=0, i=1; i < N; i++)
 		for (int j = 0; j < pos; j++)
-			if (level[i] == in[j])
-				Llev[cnt++] = level[i];
+			if (level[i] == in[j]) Llev[cnt++] = level[i];
 	for (int cnt=0, i=1; i < N; i++)
 		for (int j = pos+1; j < N; j++)
 			if (level[i] == in[j]) Rlev[cnt++] = level[i];
