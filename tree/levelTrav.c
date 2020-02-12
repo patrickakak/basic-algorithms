@@ -1,8 +1,7 @@
 /**
  * Level order traversal
  */
-void LevelOrderTraversal(BinTree BT)
-{
+void LevelOrderTraversal(BinTree BT) {
 	queue<BinTree> Q;
 	BinTree T;
 	if (!BT) return;
