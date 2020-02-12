@@ -4,8 +4,7 @@
 typedef struct TBTNode *PtrToTBTNode;
 typedef PtrToTBTNode TBTree;
 struct TBTNode {
-	int data;
-	int ltag, rtag;
+	int data, ltag, rtag;
 	TBTree lchild, rchild;
 };
 TBTree CreatBT(int pre[], int in[], int L1, int R1, int L2, int R2) {
