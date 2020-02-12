@@ -49,13 +49,6 @@ bool IsEmpty(MaxHeap H) {
 /* We can get T = O(N) rather by using Insert function to get T = O(NlogN)
  * Prerequisite: Knowing the number of input beforehand 
  */
-/* Build a MaxHeap in this way, in the worst case, the time that we need 
- * to move elements of Heap equals to the sum of every node heights:
- *     eg. X = [logN], (full binary tree)
- *     2^0*X + 2^1*(X-1) + 2^2*(X-2) + ... + 2^(X-1) * (X-(X-1))
- *   = (2^0 + 2^1 + 2^2 + ... + 2^X-1)*X - (2^1 + 2^2*2 + 2^3*3 + ... + 2^(X-1) * (X-1))
- *   = 2^(X+1) - X - 2 = 2N - logN - 2 (i.e. T = O(N))
- */
 MaxHeap BuildHeap(int N) {
 	MaxHeap H = Create(N);
 	for (int i = 1; i <= N; i++) {
