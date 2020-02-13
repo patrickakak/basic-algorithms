@@ -3,6 +3,7 @@
  */
 #include <iostream>
 #include <cstring>
+using namespace std;
 const int maxn = 1010;
 char S[maxn];
 int dp[maxn][maxn];
