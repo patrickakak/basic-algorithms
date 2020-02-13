@@ -1,15 +1,12 @@
 /**
  * Longest Palindromic Substring
  */
-#include <cstdio>
+#include <iostream>
 #include <cstring>
-
 const int maxn = 1010;
 char S[maxn];
 int dp[maxn][maxn];
-
-int main()
-{
+int main() {
 	// PATZJUJZTACCBCC
 	gets(S);
 	int len = strlen(S), ans = 1;
@@ -32,8 +29,5 @@ int main()
 		}
 	// 9
 	printf("%d\n", ans);
-
 	return 0;
 }
-
-
