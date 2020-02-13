@@ -8,22 +8,15 @@
  * V1: Queue can be replaced by stack (DFS version)
  * V2: More efficient by using priority_queue or deque to speed up
  */
-
-struct Node {
-	int v, dis;
-};
-
+struct Node { int v, dis; };
 vector<Node> Adj[MAXV];
 int n, d[MAXV], num[MAXV];
 bool inq[MAXV];
-
-bool SPFA(int s)
-{
+bool SPFA(int s) {
 	memset(inq, false, sizeof(inq));
 	memset(num, 0, sizeof(num));
 	fill(d, d+MAXV, INF);
 	queue<int> Q;
-	
 	Q.push(s);
 	inq[s] = true;
 	num[s]++;
@@ -48,4 +41,3 @@ bool SPFA(int s)
 	}
 	return true;
 }
-
