@@ -17,28 +17,19 @@
  *
  * Initiaization: for (each v in G), set D[v][v] = 0, D[i][j] = G[i][j]
  */
-bool Floyd(MGraph Graph, WeightType D[][MaxNVertex], Vertex path[][MaxNVertex])
-{
-	Vertex i, j, k; 	/* k: the time of matrix transform */
-
-	/* Initializa D[][], assume graph is initialized as INFINITY at first */
-	for (i = 0; i < Graph->Nv; i++)
-		for (j = 0; j < Graph->Nv; j++) {
+bool Floyd(MGraph Graph, WeightType D[][MaxNVertex], Vertex path[][MaxNVertex]) {
+	for (Vertex i = 0; i < Graph->Nv; i++)
+		for (Vertex j = 0; j < Graph->Nv; j++) {
 			D[i][j] = Graph->G[i][j];
 			path[i][j] = -1;
 		}
-	/* Negative-cost cycle is found, can't handle it properly
-	 * And, use recursion to print path: (i->k + k + k->j)
-	 */
-	for (k = 0; k < Graph->Nv; k++)
-		for (i = 0; i < Graph->Nv; i++)
-			for (j = 0; j < Graph->Nv; j++)
+	for (Vertex k = 0; k < Graph->Nv; k++)
+		for (Vertex i = 0; i < Graph->Nv; i++)
+			for (Vertex j = 0; j < Graph->Nv; j++)
 				if (D[i][k] + D[k][j] < D[i][j]) {
 					D[i][j] = D[i][k] + D[k][j];
-					if (i == j && D[i][j] < 0)
-						return false;
+					if (i == j && D[i][j] < 0) return false;
 					path[i][j] = k;
 				}
-	return true; 	/* Execute the algorithm properly */
+	return true;
 }
-
