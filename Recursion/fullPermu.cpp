@@ -5,8 +5,6 @@
 #include <cstring>
 #include <algorithm>
 using namespace std;
-
-
 /* n as the number of characters in string, thus
  * n=1 means this time, one perticular permutation is done
  *
@@ -14,12 +12,9 @@ using namespace std;
  * then it becomes a problem of length n-1, don't forget to
  * swap back later
  */
-void permutation(char s[], int n)
-{
+void permutation(char s[], int n) {
 	int i;
-
-	if (n == 1)
-		printf("%s\n", s);
+	if (n == 1) printf("%s\n", s);
 	else
 		for (i = 0; i < n; ++i) {
 			swap(s[i], s[n-1]);
@@ -27,13 +22,11 @@ void permutation(char s[], int n)
 			swap(s[i], s[n-1]);
 		}
 }
-
 // Version 2: using hash
 #define maxn 100
 bool hashTbl[maxn] = {false};
 char result[maxn];
-void getPermu(int index, int n, char A[])
-{
+void getPermu(int index, int n, char A[]) {
 	if (index == n) {
 		for (int i = 0; i < n; i++)
 			printf("%c", result[i]);
@@ -48,31 +41,22 @@ void getPermu(int index, int n, char A[])
 			hashTbl[i] = false;
 		}
 }
-
 /* Version3: STL */
-void Permu3(char *s, int len)
-{
+void Permu3(char *s, int len) {
 	do {
 		for (int i = 0; i < len; i++)
 			printf("%c", s[i]);
 		printf("\n");
 	} while (next_permutation(s, s+len));
 }
-
-int main()
-{
+int main() {
 	char s[100] = "abc";
 	int len = strlen(s);
-
 	/* Version1: using swap */
 	// permutation(s, len);
-	
 	/* Version2: using hash */
 	// getPermu(0, len, s);
-
 	/* Version3: STL */
 	Permu3(s, len);
-
 	return 0;
 }
-
