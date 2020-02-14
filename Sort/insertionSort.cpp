@@ -6,16 +6,12 @@
  * average number of inversions in N different elements: N*(N-1)/4, 
  * so average time complexity: T=Ω(N^2)
  */
-void InsertionSort(ElementType A[], int N)
-{
-	int P, i;
-	ElementType Tmp;
-
-	for (P = 1; P < N; P++) {
-		Tmp = A[P];		/* Get the first element of the unsorted */
+void InsertionSort(ElementType A[], int N) {
+	for (int P = 1; P < N; P++) {
+		ElementType Tmp = A[P];
+		int i;
 		for (i = P; i>=1 && A[i-1]>Tmp; i--)
-			A[i] = A[i-1];	/* Right shift */
-		A[i] = Tmp;		/* Put it in the right place */
+			A[i] = A[i-1];
+		A[i] = Tmp;
 	}
 }
-
