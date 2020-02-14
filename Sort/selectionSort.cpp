@@ -4,11 +4,9 @@
  * extra S = O(1)
  * can be optimised by using minheap technique(Tw=N*logN)
  */
-int ScanForMin(ElementType A[], int Left, int Right)
-{
+int ScanForMin(ElementType A[], int Left, int Right) {
 	ElementType Min;
 	int i, p;
-	
 	Min = A[Left];
 	for (i = Left; i <= Right; i++)
 		if (Min > A[i]) {
@@ -17,17 +15,10 @@ int ScanForMin(ElementType A[], int Left, int Right)
 		}
 	return p;
 }
-
-void SelectionSort(ElementType A[], int N)
-{
+void SelectionSort(ElementType A[], int N) {
 	int i, MinPosition;
-
 	for (i = 0; i < N; i++) {
-		/* Find the index of minimum element between A[i] and A[N-1] 
-		 * (which is a unsorted set) */
 		MinPosition = ScanForMin(A, i, N-1);
-		/* Add the element to the rear of sorted set */
 		Swap(A[i], A[MinPosition]);
 	}
 }
-
