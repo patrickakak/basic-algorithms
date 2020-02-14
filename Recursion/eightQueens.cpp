@@ -4,13 +4,11 @@
 #include <cstdio>
 #include <cmath>
 #include <cstdlib>
-
 #define n 8
 #define maxn 100
 bool hashTbl[maxn] = {false};
 int P[maxn], count = 0;
-void generateP(int index)
-{
+void generateP(int index) {
 	if (index == n+1) {
 		count++;
 		return;
@@ -31,13 +29,8 @@ void generateP(int index)
 			}
 		}
 }
-
-int main()
-{
+int main() {
 	generateP(1);
-
 	printf("count=%d", count);
 	return 0;
 }
-
-
