@@ -5,10 +5,9 @@
  * can be optimised by using minheap technique(Tw=N*logN)
  */
 int ScanForMin(ElementType A[], int Left, int Right) {
-	ElementType Min;
-	int i, p;
-	Min = A[Left];
-	for (i = Left; i <= Right; i++)
+	int p;
+	ElementType Min = A[Left];
+	for (int i = Left; i <= Right; i++)
 		if (Min > A[i]) {
 			Min = A[i];
 			p = i;
@@ -16,8 +15,8 @@ int ScanForMin(ElementType A[], int Left, int Right) {
 	return p;
 }
 void SelectionSort(ElementType A[], int N) {
-	int i, MinPosition;
-	for (i = 0; i < N; i++) {
+	int MinPosition;
+	for (int i = 0; i < N; i++) {
 		MinPosition = ScanForMin(A, i, N-1);
 		Swap(A[i], A[MinPosition]);
 	}
