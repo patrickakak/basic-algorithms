@@ -3,7 +3,7 @@
  * Worst: Tw = T(algorithm choosed)
  *
  * When elements in A[] is rather large and can not be moved easily, 
- * use indirect sorting.
+ * use indirect sorting (moving pointers instead)
  */
 void TableSort(ElementType A[], int N) {
 	int P, i, Tmp, *Tbl;
