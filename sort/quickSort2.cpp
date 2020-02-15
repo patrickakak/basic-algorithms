@@ -12,11 +12,10 @@ ElementType Median3(ElementType A[], int Left, int Right) {
 	return A[Right-1];
 }
 void Qsort(ElementType A[], int Left, int Right) {
-	int Pivot, Cutoff, Low, High;
-	Cutoff = 100;
+	int Cutoff = 100;
 	if (Cutoff < Right-Left) {
-		Pivot = Median3(A, Left, Right);
-		Low = Left; High = Right-1;
+		int Pivot = Median3(A, Left, Right);
+		int Low = Left, High = Right-1;
 		for ( ; ; ) {
 			while (A[++Low] < Pivot) ;
 			while (A[--High] > Pivot) ;
