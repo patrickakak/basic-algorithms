@@ -9,8 +9,7 @@
  */
 void PercDown(ElementType A[], int p, int N) {
 	int Parent, Child;
-	ElementType X;
-	X = A[p];
+	ElementType X = A[p];
 	for (Parent = p; (Parent*2+1) < N; Parent = Child) {
 		Child = 2*Parent + 1;
 		if ((Child != N-1) && (A[Child] < A[Child+1])) Child++;
