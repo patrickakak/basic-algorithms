@@ -20,12 +20,10 @@ struct TblNode {
 	List Heads;
 };
 HashTable CreateTable(int TableSize) {
-	HashTable H;
-	int i;
-	H = (HashTable) malloc(sizeof(struct TblNode));
+	HashTable H = (HashTable) malloc(sizeof(struct TblNode));
 	H->TableSize = NextPrime(TableSize);
 	H->Heads = (List) malloc(H->TableSize * sizeof(struct LNode));
-	for (i = 0; i < H->TableSize; i++) {
+	for (int i = 0; i < H->TableSize; i++) {
 		H->Heads[i].Data[0] = '\0';
 		H->Heads[i].Next = NULL;
 	}
