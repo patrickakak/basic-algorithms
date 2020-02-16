@@ -32,22 +32,18 @@ HashTable CreateTable(int TableSize) {
 	return H;
 }
 Position Find(HashTable H, ElementType Key) {
-	Position P;
-	Index Pos;
-	Pos = Hash(Key, H->TableSize);
-	P = H->Heads[Pos].Next;
+	Index Pos = Hash(Key, H->TableSize);
+	Position P = H->Heads[Pos].Next;
 	while (P && strcmp(P->Data, Key))
 		P = P->Next;
 	return P;
 }
 bool Insert(HashTable H, ElementType Key) {
-	Position P, NewCell;
-	Index Pos;
-	P = Find(H, Key);
+	Position P = Find(H, Key);
 	if (!P) {
-		NewCell = (Position) malloc(sizeof(struct LNode));
+		Position NewCell = (Position) malloc(sizeof(struct LNode));
 		strcpy(NewCell->Data, Key);
-		Pos = Hash(Key, H->TableSize);
+		Index Pos = Hash(Key, H->TableSize);
 		NewCell->Next = H->Heads[Pos].Next;
 		H->Heads[Pos].Next = NewCell; 
 		return true;
@@ -57,12 +53,10 @@ bool Insert(HashTable H, ElementType Key) {
 	}
 }
 void DestroyTable(HashTable H) {
-	int i;
-	Position P, Tmp;
-	for (i = 0; i < H->TableSize; i++) {
-		P = H->Heads[i].Next;
+	for (int i = 0; i < H->TableSize; i++) {
+		Position P = H->Heads[i].Next;
 		while (P) {
-			Tmp = P->Next;
+			Position Tmp = P->Next;
 			free(P);
 			P = Tmp;
 		}
