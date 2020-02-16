@@ -1,5 +1,5 @@
 /**
- * Separate chaining:
+ * Separate chaining (often for string management):
  *                           / α + e^-α (ASLu and insertion)
  * p (i.e. Expected value) = 
  *                           \ 1 + α/2 (ASLs)
