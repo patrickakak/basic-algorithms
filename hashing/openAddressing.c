@@ -29,12 +29,10 @@ int NextPrime(int N) {
 	return p;
 }
 HashTable CreateTable(int TableSize) {
-	HashTable H;
-	int i;
-	H = (HashTable) malloc(sizeof(struct TblNode));
+	HashTable H = (HashTable) malloc(sizeof(struct TblNode));
 	H->TableSize = NextPrime(TableSize);
 	H->Cells = (Cell *) malloc(H->TableSize * sizeof(Cell));
-	for (i = 0; i < H->TableSize; i++)
+	for (int i = 0; i < H->TableSize; i++)
 		H->Cells[i].Info = Empty;
 	return H;
 }
