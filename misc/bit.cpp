@@ -1,7 +1,7 @@
 /**
  * Binary Indexed Tree (aka Fenwick tree)
  *
- * (the most classic use of BIT is to calculate # of elements 
+ * (the most classic use of B.I.T is to calculate # of elements 
  * less than the current element)
  */
 #include <iostream>
