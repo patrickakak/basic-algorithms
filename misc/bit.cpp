@@ -18,6 +18,7 @@ void update(int x, int v) {
 // ==>    SUM(1, x)
 // ==>  = (A[1] + ... + A[x-lowbit(x)]) + (A[x-lowbit(x)+1] + ... + A[x])
 // ==>  = SUM(1, x-lowbit(x)) + C[x]
+// (notes: A[x] + A[x+1] + ... + A[y] = getSum[y] - getSum[x-1])
 int getSum(int x) {
 	int sum = 0;
 	for (int i = x; i > 0; i -= lowbit(i)) sum += c[i];
