@@ -30,13 +30,9 @@ void PostOrderTraversal(BinTree BT) {
 			T = Pop(S);
 			T->Nv++;
 			if (!T->Right) T->Nv++;
-			if (T->Nv == 3) {
-				printf("%5d", T->Data);
-				T = NULL;
-			} else {
-				Push(S, T);
-				T = T->Right;
-			}
+			if (T->Nv == 3) printf("%5d", T->Data);
+			else Push(S, T);
+			T = T->Right;
 		}
 	}
 }
