@@ -7,11 +7,11 @@
 countingSort() {
 	for i <- 1 to k
 		do C[i] <- 0
-  for j <- 1 to n
-  	do C[A[j]] <- C[A[j]]+1  // C[i] = |{key=i}|
-  for i <- 2 to k
-  	do C[i] <- C[i] + C[i-1] // C[i] = |{key<=i}|
-  for j <- n downto 1
-  	do B[C[A[j]]] <- A[j]
-  		C[A[j]] <- C[A[j]]-1   // distribution step
+	for j <- 1 to n
+		do C[A[j]] <- C[A[j]]+1  // C[i] = |{key=i}|
+	for i <- 2 to k
+		do C[i] <- C[i] + C[i-1] // C[i] = |{key<=i}|
+	for j <- n downto 1
+		do B[C[A[j]]] <- A[j]
+			C[A[j]] <- C[A[j]]-1
 }
