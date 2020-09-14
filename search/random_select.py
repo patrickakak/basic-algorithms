@@ -8,4 +8,4 @@ def RANDOMIZED_SELECT(A, p, r, i):
 	elif i < k:
 		return RANDOMIZED_SELECT(A, p, q-1, i)
 	else:
-		RANDOMIZED_SELECT(A, q+1, r, i-k)
+		return RANDOMIZED_SELECT(A, q+1, r, i-k)
