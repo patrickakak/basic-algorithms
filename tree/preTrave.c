@@ -17,6 +17,8 @@ void PreOrderTraversal(BinTree BT) {
 	}
 }
 // iterative
+// actually, it's the same result as if 
+// you collect right node before you collect left node
 void PreOrderTraversal(BinTree BT) {
 	BinTree T = BT;
 	Stack S = CreatStack(MaxSize);
