@@ -12,10 +12,10 @@ public class QuickUnionUF {
     int root = i;
     while (root != roots[root])
       root = roots[root]
-     while (i != roots[i]) {
-       int tmp = roots[i]; roots[i] = root; i = tmp;
-     }
-     return root;
+    while (i != roots[i]) {
+      int tmp = roots[i]; roots[i] = root; i = tmp;
+    }
+    return root;
   }
   
   public boolean connected(int p, int q) {
