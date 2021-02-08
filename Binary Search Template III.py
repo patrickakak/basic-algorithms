@@ -1,3 +1,8 @@
+# Template #3 is another unique form of Binary Search. It is used to search for an 
+# element or condition which requires accessing the current index and its immediate 
+# left and right neighbor's index in the array.
+
+
 # Key Attributes:
 # -------------------------------------------------------------------------------------------------
 # 	1. An alternative way to implement Binary Search
