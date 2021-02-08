@@ -1,3 +1,8 @@
+# Template #2 is an advanced form of Binary Search. It is used to search 
+# for an element or condition which requires accessing the current index 
+# and its immediate right neighbor's index in the array.
+
+
 # Key Attributes:
 # ---------------------------------------------------------------------------------
 # 	1. An advanced way to implement Binary Search.
