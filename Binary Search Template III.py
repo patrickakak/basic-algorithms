@@ -4,10 +4,11 @@
 
 
 # Key Attributes:
-# -------------------------------------------------------------------------------------------------
+# ----------------------------------------------------------------------------------
 # 	1. An alternative way to implement Binary Search
 # 	2. Search Condition needs to access element's immediate left and right neighbors
-# 	3. Use element's neighbors to determine if condition is met and decide whether to go left or right
+# 	3. Use element's neighbors to determine if condition is met and decide whether 
+#      to go left or right
 # 	4. Gurantees Search Space is at least 3 in size at each step
 # 	5. Post-processing required. Loop/Recursion ends when you have 2 elements left.
 # 	   Need to assess if the remaining elements meet the condition.
