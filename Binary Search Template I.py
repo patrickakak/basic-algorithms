@@ -1,3 +1,9 @@
+# Template #1 is the most basic and elementary form of Binary Search. It is the 
+# standard Binary Search Template that most high schools or universities use when 
+# they first teach students computer science. Template #1 is used to search for an 
+# element or condition which can be determined by accessing a single index in the array.
+
+
 # Key Attributes:
 # ---------------------------------------------------------------------------------------
 # 	1. Most basic and elementary form of Binary Search
