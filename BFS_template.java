@@ -31,7 +31,7 @@ int BFS(Node root, Node target) {
  */
 int BFS(Node root, Node target) {
     Queue<Node> queue;  // store all nodes which are waiting to be processed
-    Set<Node> inQ;      // store all the nodes that we've placed in Queue
+    Set<Node> visited;  // store all the nodes that we've placed in Queue
     int step = 0;       // number of steps neeeded from root to current node
     // initialize
     add root to queue;
@@ -45,9 +45,9 @@ int BFS(Node root, Node target) {
             Node cur = the first node in queue;
             return step if cur is target;
             for (Node next : the neighbors of cur) {
-                if (next is not in queue) {
+                if (next is not in used) {
                     add next to queue;
-                    add next to inQ;
+                    add next to visited;
                 }
             }
             remove the first node from queue;
@@ -57,7 +57,7 @@ int BFS(Node root, Node target) {
 }
 
 
-// There are some cases where one does not need keep the inQ hash set:
+// There are some cases where one does not need keep the visited hash set:
 
 // 1. You are absolutely sure there is no cycle, for example, in tree traversal;
 // 2. You do want to add the node to the queue multiple times.
