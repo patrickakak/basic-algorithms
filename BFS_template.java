@@ -55,3 +55,8 @@ int BFS(Node root, Node target) {
     }
     return -1;          // there is no path from root to target
 }
+
+// There are some cases where one does not need keep the visited hash set:
+
+// 1. You are absolutely sure there is no cycle, for example, in tree traversal;
+// 2. You do want to add the node to the queue multiple times.
