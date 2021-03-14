@@ -38,3 +38,7 @@ boolean DFS(int root, int target) {
 // the first path you found in DFS might not be the shortest path.
 // What if you want to find the shortest path? Add one more 
 // parameter to indicate the shortest path you have already found.
+
+// the size of the stack is exactly the depth of DFS. So in the 
+// worst case, it costs O(h) to maintain the system stack, 
+// where h is the maximum depth of DFS.
