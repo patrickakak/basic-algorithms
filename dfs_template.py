@@ -19,8 +19,9 @@ def dfs(self, tree):
         visited.add(node)
         
         process(node)
+		
         nodes = generate_related_nodes(node)
-        stack.push(nodes)
+		[stack.append(node) for node in nodes]
         
     # other processing work
     ...
