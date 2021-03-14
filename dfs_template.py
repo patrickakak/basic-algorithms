@@ -12,13 +12,13 @@ def dfs(self, tree):
     if tree.root is None:
         return []
     
-    visited, stack = [], [tree.root]
+    visited, stack = set(), [tree.root]
     
     while stack:
         node = stack.pop()
         visited.add(node)
         
-        process(ndoe)
+        process(node)
         nodes = generate_related_nodes(node)
         stack.push(nodes)
         
