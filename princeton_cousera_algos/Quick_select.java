@@ -9,8 +9,8 @@ public static Comparable select(Comparable[] a, int k) {
     int j = partition(a, lo, hi);
     if      (j < k) lo = j + 1;
     else if (j > k) hi = j - 1;
-    else            return a[k];
+    else            return a[j];
   }
-  return a[k];
+  return a[lo];
 }
 
